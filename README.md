@@ -9,4 +9,4 @@
 - Created on 12 Jan 2025.
 - Note to developer: **To prevent vercel frontend deployments for any changes in backend folder you can ignore the build step in vercel using option "Only build if there are changes in a folder" as specifed in the docs here - [Vercel Docs: project-configuration/git-settings](https://vercel.com/docs/projects/project-configuration/git-settings#ignored-build-step) .**
   - Similarly in github actions we can specify for when to create a deployment i.e., when a changes are detected in a particular folder. (FYI: This is done by runing `git diff` command and see if the given ignored folder was changed and act accordingly).
-  - Similarly in render - you can use feature as mentioned here - [https://render.com/docs/blueprint-spec#buildfilter](https://render.com/docs/blueprint-spec#buildfilter)
+  - Similarly in render - you can use feature as mentioned here - [https://render.com/docs/blueprint-spec#buildfilter](https://render.com/docs/blueprint-spec#buildfilter) ([source](https://community.render.com/t/ignoring-files-folders-in-builds/20549/2))
