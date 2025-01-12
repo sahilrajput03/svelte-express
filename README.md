@@ -1,12 +1,12 @@
 # This attempt to help share common files b/w frontend and backend has failed.
 
-_Check the drawbacks heading in this readme file._
+**Drawbacks of this approach**
+
+1. We can not import libraries in the common file (e..g, `common/utils.ts`) because we get runtime error in that case. Please check comments in `common/utils.ts` file to know more about this.
 
 # Svelte + Expressjs with common files usage
 
-Created on 12 Jan 2025.
-
-## Drawbacks of this approach
-
-1. Any changes made in `backend` folder also triggers frontend deployment in vercel as well. (I tried to mitigate this issue by using `.vercelignore` file but it seems this file is to only include file/folder in the final build and not for the purpose to prevent deployment for changes of a folder like `backend` as I need), thus this file doesn't help me my case.
-2. We can not import libraries in the common file (e..g, `common/utils.ts`) because we get runtime error in that case. Please check comments in `common/utils.ts` file to know more about this.
+- Created on 12 Jan 2025.
+- Note to developer: **To prevent vercel frontend deployments for any changes in backend folder you can ignore the build step in vercel using option "Only build if there are changes in a folder" as specifed in the docs here - [Vercel Docs: project-configuration/git-settings](https://vercel.com/docs/projects/project-configuration/git-settings#ignored-build-step) .**
+  - Similarly in github actions we can specify for when to create a deployment i.e., when a changes are detected in a particular folder. (FYI: This is done by runing `git diff` command and see if the given ignored folder was changed and act accordingly).
+  - Similarly in render - you can use feature as mentioned here - [https://render.com/docs/blueprint-spec#buildfilter](https://render.com/docs/blueprint-spec#buildfilter)
